@@ -1,4 +1,4 @@
-FROM php:7.4-cli-alpine
+FROM php:8.0-cli-alpine
 
 LABEL "repository" = "https://github.com/musps/action-deployer-php"
 LABEL "homepage" = "https://github.com/musps/action-deployer-php"
@@ -8,7 +8,7 @@ LABEL "com.github.actions.description"="Use your Deployer PHP script with your g
 LABEL "com.github.actions.icon"="server"
 LABEL "com.github.actions.color"="yellow"
 
-ENV DEPLOYER_VERSION=6.8.0
+ENV DEFAULT_DEPLOYER_VERSION=6.8.0
 
 RUN apk update --no-cache \
     && apk add --no-cache \

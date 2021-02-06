@@ -13,6 +13,12 @@ else
     CMD_ARGS="$@"
 fi
 
+if [[ $DEPLOYER_VERSION != $DEFAULT_DEPLOYER_VERSION ]]; then
+  echo "Overwriting the default version of ${DEFAULT_DEPLOYER_VERSION} to ${DEPLOYER_VERSION}"
+  curl -L https://deployer.org/releases/v$DEPLOYER_VERSION/deployer.phar > /usr/local/bin/deployer /
+  && chmod +x /usr/local/bin/deployer
+fi
+
 mkdir -p /github/home/.ssh
 
 eval $(ssh-agent -s)
